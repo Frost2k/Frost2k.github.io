@@ -203,12 +203,8 @@ $on-laptop:        800px;
   * Wrapper
   */
  .wrapper {
-     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
      margin-right: auto;
      margin-left: auto;
-     padding-right: $spacing-unit;
-     padding-left: $spacing-unit;
      @extend %clearfix;
  
      @include media-query($on-laptop) {
@@ -423,6 +419,7 @@ $on-laptop:        800px;
  */
 .page-content {
     padding: $spacing-unit 0;
+    padding: 0px;
 }
 
 .page-heading {
@@ -568,7 +565,7 @@ $on-laptop:        800px;
 }
 
 body {
-    background-color: #ECECEC;
+    background-color: white;
     color: #444444;
     padding: 0;
     margin: 0;
@@ -614,7 +611,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: #ee6e73;
+    background: midnightblue;
     -webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 2px 6px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 2px 6px 0px rgba(50, 50, 50, 0.75);
@@ -664,12 +661,22 @@ body {
     padding: 0;
   }
   .parallax.p1 {
-    background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-70374.jpg) no-repeat fixed 50% 0;
+    background: url(./images/image-analysis.png) no-repeat fixed 50% 0;
     background-size: cover;
     color: #fff;
+    display: flex;
+    justify-content: start;
+
+    hgroup{
+        transform: unset;
+        top: 0%;
+        left: 20%;
+        align-self: center;
+
+    }
   }
   .parallax.p2 {
-    background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-126549.jpg) no-repeat fixed 50% 0;
+    background: url(./images/foldit_art.jpg) no-repeat fixed 50% 0;
     background-size: cover;
     color: #fff;
   }
@@ -694,6 +701,19 @@ body {
     width: 100%;
     height: 100%;
   } 
+  .profile-image{
+    width: 15%;
+    margin-left: 2%;
+    margin-top: 1%;
+  }
+  .profile-image img{
+    max-width: 100%;
+    vertical-align: middle;
+    border-radius: 25%;
+    border-width: thick;
+    border-style: solid;
+    border-color: black;
+  }
   hgroup{
     display: inline-block;
     text-align: center;
@@ -727,12 +747,13 @@ body {
     float: left;
     padding-left: 5px;
     padding-right: 5px;
+    border-left-style: double;
   }
   footer {
     width: 100%;
     padding-top: 20px;
     display: block;
-    background-color: #ee6e73;
+    background-color: midnightblue;
   }
   .footer-copyright {
     font-weight: 300;
