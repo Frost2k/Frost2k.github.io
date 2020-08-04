@@ -232,6 +232,7 @@ pre {
   padding-left: 15px; }
 
 .footer-col-1 {
+  display: none;
   width: 100%;
   text-align: center; }
 
