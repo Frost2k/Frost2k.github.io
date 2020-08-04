@@ -90,7 +90,6 @@ $on-laptop:        800px;
   * Images
   */
  img {
-     max-width: 100%;
      vertical-align: middle;
  }
  
@@ -130,6 +129,7 @@ $on-laptop:        800px;
   */
  h1, h2, h3, h4, h5, h6 {
      font-weight: $base-font-weight;
+     font-family: fantasy;
  }
  
  
@@ -203,6 +203,8 @@ $on-laptop:        800px;
   * Wrapper
   */
  .wrapper {
+     display: flex;
+     flex-wrap: wrap;
      margin-right: auto;
      margin-left: auto;
      @extend %clearfix;
@@ -349,9 +351,7 @@ $on-laptop:        800px;
  */
 .site-footer {
     border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
 }
-
 .footer-heading {
     font-size: 18px;
     margin-bottom: $spacing-unit / 2;
@@ -377,13 +377,14 @@ $on-laptop:        800px;
 }
 
 .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
+    width: 100%;
+    text-align: center;
 }
 
 .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
 }
 
 .footer-col-3 {
@@ -607,15 +608,20 @@ body {
     right: 0;
   }
   div.navbar {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: midnightblue;
+    background: #033179;
     -webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 2px 6px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 2px 6px 0px rgba(50, 50, 50, 0.75);
     z-index: 9999999;
+
+    img{
+        width: 3rem;
+        padding-top: 7px;
+        padding-bottom: 5px;
+    }
   }
   div.navbar > ul.navbar-container {
     list-style-type: none;
@@ -623,6 +629,11 @@ body {
     padding-left: 1em;
     padding-right: 1em;
     overflow: hidden;
+    display: flex;
+
+    .brand-logo{
+        flex: 1;
+    }
   }
   div.navbar > ul > li.nav-item {
     float: right;
@@ -666,12 +677,23 @@ body {
     color: #fff;
     display: flex;
     justify-content: start;
+    width: 100%;
+    flex-wrap: wrap;
+    @media screen and (min-width: 790px) {
+        height: 18rem;
+    }
+    @media screen and (max-width: 790px) {
+        justify-content: center;
+    }
 
     hgroup{
         transform: unset;
         top: 0%;
         left: 20%;
         align-self: center;
+        @media screen and (max-width: 790px) {
+            position: unset;
+        }
 
     }
   }
@@ -679,6 +701,14 @@ body {
     background: url(./images/foldit_art.jpg) no-repeat fixed 50% 0;
     background-size: cover;
     color: #fff;
+    display:  flex;
+    justify-content: center;
+    width: 100%;
+
+    a.hgroup{
+        top: 20%;
+        align-self: center;
+    }
   }
   .parallax.p3 {
     background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95766.jpg) no-repeat fixed 70% 0;
@@ -702,7 +732,7 @@ body {
     height: 100%;
   } 
   .profile-image{
-    width: 15%;
+    width: 15rem;
     margin-left: 2%;
     margin-top: 1%;
   }
@@ -713,6 +743,9 @@ body {
     border-width: thick;
     border-style: solid;
     border-color: black;
+    @media screen and (max-width: 790px) {
+        margin-top: 30px;
+    }
   }
   hgroup{
     display: inline-block;
@@ -734,6 +767,10 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     min-height: 150px;
+    display: flex;
+    @media screen and (max-width: 790px) {
+          flex-wrap: wrap;
+      }
   }
   .row:after {
     content: "";
@@ -741,27 +778,38 @@ body {
     clear: both;
   }
   .row > .col-3 {
-    width: 30%;
-    height: 100%;
     box-sizing: border-box;
     float: left;
     padding-left: 5px;
     padding-right: 5px;
     border-left-style: double;
+    box-shadow: 10px 3px 10px 3px rgba(50, 50, 50, 0.75);
   }
   footer {
     width: 100%;
     padding-top: 20px;
     display: block;
-    background-color: midnightblue;
+    background-color: #033179;
+    display: flex;
+    justify-content: center;
+
+    .contact-list{
+        a{
+            color: white;
+    }
   }
+}
   .footer-copyright {
     font-weight: 300;
     overflow: hidden;
     height: 50px;
     line-height: 50px;
     color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(51, 51, 51, 0.08);
+    background-color:#0b254d;
+
+    .container{
+        text-align: center;
+    }
   }
   .container {
     width: 85%;
@@ -775,9 +823,18 @@ body {
     text-indent: 20px;
     color: #ececec;
   }
+  .footer-wrapper{
+      .footer-heading{
+          color: white;
+      }
+  }
   
-  
-  /* Blank lines for ease and view */
-  /* */
+  .fab.fa-linkedin-in{
+      color: white;
+      margin-right: 10px;
+  }
+  .fab.fa-github{
+      color: white;
+  }
 
  

@@ -34,7 +34,6 @@ ul, ol, dl, figure,
  * Images
  */
 img {
-  max-width: 100%;
   vertical-align: middle; }
 
 /**
@@ -60,7 +59,8 @@ li > ol {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400; }
+  font-weight: 400;
+  font-family: fantasy; }
 
 /**
  * Links
@@ -112,6 +112,8 @@ pre {
  * Wrapper
  */
 .wrapper {
+  display: flex;
+  flex-wrap: wrap;
   margin-right: auto;
   margin-left: auto; }
   @media screen and (max-width: 800px) {
@@ -208,8 +210,7 @@ pre {
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid #e8e8e8;
-  padding: 30px 0; }
+  border-top: 1px solid #e8e8e8; }
 
 .footer-heading {
   font-size: 18px;
@@ -231,12 +232,13 @@ pre {
   padding-left: 15px; }
 
 .footer-col-1 {
-  width: -webkit-calc(35% - (30px / 2));
-  width: calc(35% - (30px / 2)); }
+  width: 100%;
+  text-align: center; }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (30px / 2));
-  width: calc(20% - (30px / 2)); }
+  width: 100%;
+  justify-content: space-around;
+  display: flex; }
 
 .footer-col-3 {
   width: -webkit-calc(45% - (30px / 2));
@@ -496,22 +498,28 @@ body {
   right: 0; }
 
 div.navbar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: midnightblue;
+  background: #033179;
   -webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
   z-index: 9999999; }
+  div.navbar img {
+    width: 3rem;
+    padding-top: 7px;
+    padding-bottom: 5px; }
 
 div.navbar > ul.navbar-container {
   list-style-type: none;
   margin: 0;
   padding-left: 1em;
   padding-right: 1em;
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex; }
+  div.navbar > ul.navbar-container .brand-logo {
+    flex: 1; }
 
 div.navbar > ul > li.nav-item {
   float: right;
@@ -554,17 +562,34 @@ li.active > a.nav-button {
   background-size: cover;
   color: #fff;
   display: flex;
-  justify-content: start; }
+  justify-content: start;
+  width: 100%;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 790px) {
+    .parallax.p1 {
+      height: 18rem; } }
+  @media screen and (max-width: 790px) {
+    .parallax.p1 {
+      justify-content: center; } }
   .parallax.p1 hgroup {
     transform: unset;
     top: 0%;
     left: 20%;
     align-self: center; }
+    @media screen and (max-width: 790px) {
+      .parallax.p1 hgroup {
+        position: unset; } }
 
 .parallax.p2 {
   background: url(./images/foldit_art.jpg) no-repeat fixed 50% 0;
   background-size: cover;
-  color: #fff; }
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+  .parallax.p2 a.hgroup {
+    top: 20%;
+    align-self: center; }
 
 .parallax.p3 {
   background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95766.jpg) no-repeat fixed 70% 0;
@@ -588,7 +613,7 @@ li.active > a.nav-button {
   height: 100%; }
 
 .profile-image {
-  width: 15%;
+  width: 15rem;
   margin-left: 2%;
   margin-top: 1%; }
 
@@ -599,6 +624,9 @@ li.active > a.nav-button {
   border-width: thick;
   border-style: solid;
   border-color: black; }
+  @media screen and (max-width: 790px) {
+    .profile-image img {
+      margin-top: 30px; } }
 
 hgroup {
   display: inline-block;
@@ -619,7 +647,11 @@ hgroup {
   padding-right: 10%;
   padding-top: 15px;
   padding-bottom: 15px;
-  min-height: 150px; }
+  min-height: 150px;
+  display: flex; }
+  @media screen and (max-width: 790px) {
+    .row {
+      flex-wrap: wrap; } }
 
 .row:after {
   content: "";
@@ -627,19 +659,22 @@ hgroup {
   clear: both; }
 
 .row > .col-3 {
-  width: 30%;
-  height: 100%;
   box-sizing: border-box;
   float: left;
   padding-left: 5px;
   padding-right: 5px;
-  border-left-style: double; }
+  border-left-style: double;
+  box-shadow: 10px 3px 10px 3px rgba(50, 50, 50, 0.75); }
 
 footer {
   width: 100%;
   padding-top: 20px;
   display: block;
-  background-color: midnightblue; }
+  background-color: #033179;
+  display: flex;
+  justify-content: center; }
+  footer .contact-list a {
+    color: white; }
 
 .footer-copyright {
   font-weight: 300;
@@ -647,7 +682,9 @@ footer {
   height: 50px;
   line-height: 50px;
   color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(51, 51, 51, 0.08); }
+  background-color: #0b254d; }
+  .footer-copyright .container {
+    text-align: center; }
 
 .container {
   width: 85%;
@@ -661,5 +698,12 @@ footer p {
   text-indent: 20px;
   color: #ececec; }
 
-/* Blank lines for ease and view */
-/* */
+.footer-wrapper .footer-heading {
+  color: white; }
+
+.fab.fa-linkedin-in {
+  color: white;
+  margin-right: 10px; }
+
+.fab.fa-github {
+  color: white; }

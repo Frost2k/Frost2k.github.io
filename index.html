@@ -2,6 +2,18 @@
 <html>
 
   <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174479758-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-174479758-1');
+    </script>
+
+  <script src="https://kit.fontawesome.com/281047f465.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,42 +29,6 @@
 
   <body>
 
-    <header class="site-header">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="/"></a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/about/">About</a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    </nav>
-
-  </div>
-
-</header>
-
 
     <div class="page-content">
       <div class="wrapper">
@@ -65,15 +41,17 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <div class="navbar">
       <ul class="navbar-container">
-        <li><a href="#" class="left-underline nav-button brand-logo">Brand Logo</a></li>
-        <li class="nav-item"><a href="#section-3" class="left-underline nav-button" data-scroll>Wallet</a></li>
-        <li class="nav-item"><a href="#section-2" class="left-underline nav-button" data-scroll>Pictures</a></li>
+        <li class="brand-logo"><a href="#" class="left-underline nav-button brand-logo"><img src="./css/images/Logo.png" alt="Brand Logo"></a></li>
+        <li class="nav-item" style="display: none;"><a href="#section-3" class="left-underline nav-button" data-scroll>Wallet</a></li>
+        <li class="nav-item"><a href="#section-2" class="left-underline nav-button" data-scroll>Projects</a></li>
         <li class="nav-item active"><a href="#section-1" class="left-underline nav-button" data-scroll>Home</a></li>
       </ul>
     </div>
     <div class="parallax p1" id="section-1" >
       <div class="profile-image" id="profile-image">
-        <img src="./css/images/profile.jpg" alt="Image">
+        <a href="https://github.com/Frost2k" target="_blank">
+          <img src="./css/images/profile.jpg" alt="Image">
+        </a>
       </div>
       <hgroup>
         <h1>Hello.</h1>
@@ -95,10 +73,12 @@
       </div>
     </div>
     <div class="parallax p2" id="section-2">
-      <hgroup>
-        <h1>Foldit</h1>
-        <h2>A Protien Folding Game</h2>
-      </hgroup>
+      <a href="https://fold.it/" target="_blank">
+        <hgroup>
+          <h1>Foldit</h1>
+          <h2>A Protien Folding Game</h2>
+        </hgroup>
+      </a>
     </div>
     <div class="row" style="display: none;">
       <div class="col-3">
@@ -125,23 +105,25 @@
       </div>
     </div>
 
-    <footer class="site-footer" style="display:none;">
+    <footer class="site-footer">
 
-  <div class="wrapper">
+  <div class="footer-wrapper">
 
-    <h2 class="footer-heading"></h2>
+    <h2 class="footer-heading">Lets Build Something Awesome!</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li></li>
-          <li><a href="mailto:"></a></li>
+          <li><a href="mailto:jtscott2k@gmail.com">jtscott2k@gmail.com</a></li>
         </ul>
       </div>
 
       <div class="footer-col footer-col-2">
         <ul class="social-media-list">
-          
+          <a href="https://www.linkedin.com/in/thomas-scott-b5492075/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Frost2k" target="_blank"><i class="fab fa-github"></i></a>            
+          <i class="fab fa-github"></i>  
 
           
         </ul>
@@ -155,13 +137,11 @@
   </div>
 
 </footer>
-<footer>
   <div class="footer-copyright">
     <div class="container">
       © 2020 codingwithtomtom, All rights reserved.
     </div>
   </div>
-</footer>
 
 
   </body>
